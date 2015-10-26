@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Status
+  ul
+    each val, index in status
+      li.
+        Hash: #{val.hash}
+        Source IP: #{val.source_ip}
+        Inner IPs: #{val.inner_ips}
