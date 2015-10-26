@@ -23,7 +23,14 @@ app.get('/status', function(req, res, next) {
 
 app.get('/discover', function(req, res, next) {
   var shasum = crypto.createHash('sha1');
-  shasum.update(req.ip);
+  var ipAddr = req.headers["x-forwarded-for"];
+  if (ipAddr){
+    var list = ipAddr.split(",");
+    ipAddr = list[list.length-1];
+  } else {
+    ipAddr = req.connection.remoteAddress;
+  }
+  shasum.update(ipAddr);
   var hash = shasum.digest('hex');
   if (hash in cache) {
     var now = Date.now();
