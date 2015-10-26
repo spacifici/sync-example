@@ -1,0 +1,33 @@
+#message-area {
+  position: absolute;
+  display: block;
+  overflow-y: scroll;
+  top: 2.5em;
+  bottom: 3em;
+  left: 0.5em;
+  right: 0.5em;
+  border: 1px solid black;
+}
+
+#input-area {
+  display: block;
+  position: absolute;
+  bottom: 0em;
+  right: 0em;
+  left: 0em;
+  padding: 1em;
+}
+
+#message-box {
+  width: 100%;
+}
+
+.in-message {
+  text-align: right;
+  color: blueviolet;
+  margin: 0.5em;
+}
+
+.out-message {
+  margin: 0.5em;
+}
